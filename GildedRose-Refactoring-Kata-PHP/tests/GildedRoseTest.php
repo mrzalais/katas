@@ -7,13 +7,14 @@ namespace Tests;
 use GildedRose\GildedRose;
 use PHPUnit\Framework\TestCase;
 use GildedRose\Exceptions\NegativeItemQualityException;
+use GildedRose\Exceptions\ExcessiveItemQualityException;
 
 class GildedRoseTest extends TestCase
 {
     use ItemFactory;
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testSellInValueDropsByOneWhenUpdateIsCalled(): void
     {
@@ -24,7 +25,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testQualityDegradesWhenUpdateIsCalled(): void
     {
@@ -35,7 +36,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testQualityDegradesTwiceAsFastWhenSellByDateHasPassed(): void
     {
@@ -46,7 +47,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testQualityCanNotBeNegative(): void
     {
@@ -57,7 +58,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testAgedBrieIncreasesInQualityAsTimePasses(): void
     {
@@ -68,7 +69,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testQualityOfAnItemDoesNotGoAboveFifty(): void
     {
@@ -79,7 +80,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      */
     public function testSulfurasDoesNotDegradeInQuality(): void
     {
@@ -90,7 +91,7 @@ class GildedRoseTest extends TestCase
     }
 
     /**
-     * @throws NegativeItemQualityException
+     * @throws NegativeItemQualityException|ExcessiveItemQualityException
      * @dataProvider backstagePassProvider
      */
     public function testBackstagePassesIncreaseInQualityAsSellInApproaches(
