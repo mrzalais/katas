@@ -4,4 +4,3 @@
 /.phpunit.result.cache
 /build
 /vendor
-/phpunit.phar

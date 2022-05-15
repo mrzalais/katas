@@ -95,9 +95,9 @@ class GildedRoseTest extends TestCase
      * @dataProvider backstagePassProvider
      */
     public function testBackstagePassesIncreaseInQualityAsSellInApproaches(
-        $initialQuality,
-        $expectedQuality,
-        $sellIn,
+        int $initialQuality,
+        int $expectedQuality,
+        int $sellIn,
     ): void
     {
         $items[] = $this->createItem('Backstage passes to a TAFKAL80ETC concert', $sellIn, $initialQuality);
